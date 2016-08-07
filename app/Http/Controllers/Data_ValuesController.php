@@ -77,7 +77,7 @@ class Data_ValuesController extends Controller
     {
         $data_value = App\Data_Values::find(1);
 
-        //Attributes to be updated.
+        //Updates.
 
         $data_value->save();
     }
