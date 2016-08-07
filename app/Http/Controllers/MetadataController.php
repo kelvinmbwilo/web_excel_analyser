@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Metadata;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class MetadataController extends Controller
      */
     public function index()
     {
-        //
+        return Metadata::all();
     }
 
     /**
@@ -37,7 +38,7 @@ class MetadataController extends Controller
     public function store(Request $request)
     {
         $metadata = new Metadata;
-
+        //$metadata->name = $request->name
         $metadata->save();
     }
 
@@ -49,7 +50,7 @@ class MetadataController extends Controller
      */
     public function show($id)
     {
-        //
+        return Metadata::find($id);
     }
 
     /**
@@ -72,7 +73,10 @@ class MetadataController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $metadata = Metadata::find($id);
+
+        //$metadata->name = $request->name;
+        $metadata->save();
     }
 
     /**
@@ -83,6 +87,8 @@ class MetadataController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $metadata = Metadata::find($id);
+        $metadata->delete();
+        $metadata->save();
     }
 }

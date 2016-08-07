@@ -22,6 +22,25 @@ Route::get('home', function () {
 Route::resource('metadata', 'MetadataController', ['only' => ['store']]);
 Route::post('metadata/{id}', 'MetadataController@store');
 
+/**
+ * Metadata routes
+ *
+ */
+//get all
+Route::get('metadata', 'MetadataController@index');
+
+//get one metadata with using id
+Route::get('metadata/{id}', 'MetadataController@show');
+
+//create new metadata
+Route::post('metadata', 'MetadataController@store');
+
+//update one metadata with id $id
+Route::post('metadata/{id}', 'MetadataController@update');
+
+//delete metadata
+Route::post('metadata/delete/{id}', 'MetadataController@destroy');
+
 Route::resource('categories', 'CategoriesController', ['only' => ['store']]);
 Route::post('categories/{id}', 'CategoriesController@store');
 

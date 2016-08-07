@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Data_Values;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\App;
 
 class Data_ValuesController extends Controller
 {
@@ -52,7 +54,7 @@ class Data_ValuesController extends Controller
      */
     public function show($id)
     {
-        //
+        return Data_Values::find($id);
     }
 
     /**
@@ -75,7 +77,7 @@ class Data_ValuesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data_value = App\Data_Values::find(1);
+        $data_value = Data_Values::find(1);
 
         //Attributes to be updated.
 
