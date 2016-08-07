@@ -8,9 +8,9 @@ class Categories extends Model
 
 	protected $primaryKey = 'id';
 
-	protected $fillable = ['id', 'name'];
+	//protected $fillable = ['id', 'name'];
 
-	protected $hidden = ['id'];
+	protected $guarded = ['id'];
 
 	public function metadata(){
 		return $this->belongsTo('Metadata');
