@@ -37,9 +37,11 @@ class MetadataController extends Controller
      */
     public function store(Request $request)
     {
-        $metadata = new Metadata;
-        //$metadata->name = $request->name
-        $metadata->save();
+        return Metadata::find(1);
+//        $metadata = new Metadata;
+//        $metadata->name = $request->name;
+//        $metadata->save();
+//        return $metadata;
     }
 
     /**

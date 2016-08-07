@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('home', function () {
@@ -47,7 +47,8 @@ Route::post('categories/{id}', 'CategoriesController@store');
 Route::resource('metadata_category', 'Metadata_CategoryController', ['only' => ['store']]);
 Route::post('metadata_category/{id}', 'Metadata_CategoryController@store');
 
-Route::resource('district', 'DistrictController', ['only' => ['store']]);
+Route::get('district', 'DistrictController@index');
+Route::get('district/{id}', 'DistrictController@show');
 Route::post('district/{id}', 'DistrictController@store');
 
 Route::resource('region', 'RegionController', ['only' => ['store']]);

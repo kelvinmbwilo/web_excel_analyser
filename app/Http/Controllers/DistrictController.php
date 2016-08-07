@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\District;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        return District::all();
     }
 
     /**
@@ -49,7 +50,7 @@ class DistrictController extends Controller
      */
     public function show($id)
     {
-        //
+        return District::find($id);
     }
 
     /**
