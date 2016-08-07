@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Data_Values;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\App;
 
-class Data_ValuesController extends Controller
+class DataValuesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,13 +36,12 @@ class Data_ValuesController extends Controller
      */
     public function store(Request $request)
     {
-        $data_value = new Data_Value;
+        $datavalue = new DataValue;
 
-        $data_value->arrivedData = $request->arrivedData;
+        $datavalue->arrivedData = $request->arrivedData;
 
-        $data_value->save();
+        $datavalue->save();
     }
-
 
     /**
      * Display the specified resource.
@@ -54,7 +51,7 @@ class Data_ValuesController extends Controller
      */
     public function show($id)
     {
-        return Data_Values::find($id);
+        return DataValues::find($id);
     }
 
     /**
@@ -77,11 +74,9 @@ class Data_ValuesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data_value = Data_Values::find(1);
-
+        $datavalue = DataValues::find($id);
         //Updates.
-
-        $data_value->save();
+        $datavalue->save();
     }
 
     /**
@@ -92,6 +87,8 @@ class Data_ValuesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $datavalue = DataValues::find($id);
+        $datavalue->delete();
+        $datavalue->save();
     }
 }

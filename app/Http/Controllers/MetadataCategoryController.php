@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class Metadata_CategoryController extends Controller
+class MetadataCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class Metadata_CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return MetadataCategory::all();
     }
 
     /**
@@ -36,7 +36,7 @@ class Metadata_CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $metadata_category = new Metadata_Category;
+        $metadata_category = new MetadataCategory;
 
         $metadata_category->save();
     }
@@ -49,7 +49,7 @@ class Metadata_CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return MetadataCategory::find($id);
     }
 
     /**
@@ -72,7 +72,9 @@ class Metadata_CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $metadata_category = MetadataCategory::find($id);
+        //Updates.
+        $metadata_category->save();
     }
 
     /**
@@ -83,6 +85,8 @@ class Metadata_CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $metadata_ = MetadataCategories::find($id);
+        $metadata_category->delete();
+        $metadata_category->save();
     }
 }

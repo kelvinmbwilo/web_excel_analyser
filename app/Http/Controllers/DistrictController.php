@@ -15,7 +15,7 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        return District::all();
     }
 
     /**
@@ -49,7 +49,7 @@ class DistrictController extends Controller
      */
     public function show($id)
     {
-        //
+        return District::find($id);
     }
 
     /**
@@ -72,7 +72,9 @@ class DistrictController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $district = District::find($id);
+        //Updates.
+        $district->save();
     }
 
     /**
@@ -83,6 +85,8 @@ class DistrictController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $district = District::find($id);
+        $district->delete();
+        $district->save();
     }
 }

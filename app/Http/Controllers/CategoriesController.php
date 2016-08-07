@@ -15,7 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        return Categories::all();
     }
 
     /**
@@ -49,7 +49,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        return Categories::find($id);
     }
 
     /**
@@ -72,7 +72,9 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categories = Categories::find($id);
+        //Updates.
+        $categories->save();
     }
 
     /**
@@ -83,6 +85,8 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Categories::find($id);
+        $categories->delete();
+        $categories->save();
     }
 }

@@ -15,7 +15,7 @@ class RegionController extends Controller
      */
     public function index()
     {
-        //
+        return Region::all();
     }
 
     /**
@@ -49,7 +49,7 @@ class RegionController extends Controller
      */
     public function show($id)
     {
-        //
+        return Categories::find($id);
     }
 
     /**
@@ -72,7 +72,9 @@ class RegionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $region = Region::find($id);
+        //Updates.
+        $region->save();
     }
 
     /**
@@ -83,6 +85,8 @@ class RegionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $region = Region::find($id);
+        $region->delete();
+        $region->save();
     }
 }

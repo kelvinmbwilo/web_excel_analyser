@@ -74,7 +74,6 @@ class MetadataController extends Controller
     public function update(Request $request, $id)
     {
         $metadata = Metadata::find($id);
-
         //$metadata->name = $request->name;
         $metadata->save();
     }
