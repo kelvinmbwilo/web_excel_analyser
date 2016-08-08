@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="catogoriesController">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Categories</title>
+
+
+  </head>
+
+
+  <body ng-controller="categories">
+        <!-- page content -->
+                <h3>Categories</h3>
+                <h2>Categories</h2>
+
+                <form >
+                   <label for="category">Category <span class="required">*</span></label>
+                   <input type="text" id="category" required="required" ng-model="category">
+                   <button type="submit" ng-click="save()">Save</button>
+                </form>
+
+  </body>
+</html>
