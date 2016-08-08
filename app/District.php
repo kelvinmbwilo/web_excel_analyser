@@ -6,11 +6,7 @@ class District extends Model
 {
 	protected $table = 'districts';
 
-	protected $primaryKey = 'id';
-
-	protected $fillable = ['id', 'name', 'region_id'];
-
-	protected $hidden = ['id'];
+	protected $guarded = ['id'];
 
 	public function data_values(){
 		return $this->HasMany('Data_Values');

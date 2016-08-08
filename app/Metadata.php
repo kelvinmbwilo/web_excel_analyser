@@ -6,11 +6,7 @@ class Metadata extends Model
 {
 	protected $table = 'metadata';
 
-	protected $primaryKey = 'id';
-
-	protected $fillable = ['id', 'name'];
-
-	protected $hidden = ['id'];
+	protected $guarded = ['id'];
 
 	/*public function categories(){
 		return $this->HasMany('Categories');
